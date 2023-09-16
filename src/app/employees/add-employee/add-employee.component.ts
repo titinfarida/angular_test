@@ -53,16 +53,16 @@ export class AddEmployeeComponent implements OnInit {
   ];
 
   groupList: any[] = [
-    { value: 'Dept. A', viewValue: 'Dept. A' },
-    { value: 'Dept. B', viewValue: 'Dept. B' },
-    { value: 'Dept. C', viewValue: 'Dept. C' },
-    { value: 'Dept. D', viewValue: 'Dept. D' },
-    { value: 'Dept. E', viewValue: 'Dept. E' },
-    { value: 'Dept. F', viewValue: 'Dept. F' },
-    { value: 'Dept. G', viewValue: 'Dept. G' },
-    { value: 'Dept. H', viewValue: 'Dept. H' },
-    { value: 'Dept. I', viewValue: 'Dept. I' },
-    { value: 'Dept. J', viewValue: 'Dept. J' },
+    { value: 'Accounting Dept.', viewValue: 'Accounting Dept.' },
+    { value: 'Planning Dept.', viewValue: 'Planning Dept.' },
+    { value: 'Credit Service Dept.', viewValue: 'Credit Service Dept.' },
+    { value: 'Deposit Service Dept.', viewValue: 'Deposit Service Dept.' },
+    { value: 'E Banking Dept.', viewValue: 'E Banking Dept.' },
+    { value: 'Finance Dept.', viewValue: 'Finance Dept.' },
+    { value: 'Giro Dept.', viewValue: 'Giro Dept.' },
+    { value: 'Human Resource Dept.', viewValue: 'Human Resource Dept.' },
+    { value: 'Information and Technology Dept.', viewValue: 'Information and Technology Dept.' },
+    { value: 'Risk Management Dept.', viewValue: 'Risk Management Dept.' },
 
   ];
 
