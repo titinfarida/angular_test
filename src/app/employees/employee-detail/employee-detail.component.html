@@ -23,12 +23,12 @@
         <mat-divider></mat-divider>
         <div>
             <span>Birth Date: </span>
-            <span>{{data.birthDate}}</span>
+            <span>{{data.birthDate | date}}</span>
         </div>
         <mat-divider></mat-divider>
         <div>
             <span>Basic Salary: </span>
-            <span>{{data.basicSalary}}</span>
+            <span>{{data.basicSalary | currency:'Rp'}}</span>
         </div>
         <mat-divider></mat-divider>
         <div>
