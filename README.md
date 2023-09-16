@@ -9,8 +9,8 @@ Tunggu sampai semua packages terinstall dengan sukses.
 Tunggu sampai proses build selesai.
 6. Buka browser favorit Anda. Navigasi ke `http://localhost:4200/` 
 7. Login menggunakan credentials berikut: 
-# user name: admin
-# password: 123@
+#### user name: admin
+#### password: 123@
 8. Silahkan mengeksplore aplikasinya. Terimakasih!
 
 ## How to run the app
@@ -24,6 +24,6 @@ Wait until all of the packages get installed successfully.
 Wait until the build is completed.
 6. Open your favorite browser. Navigate to `http://localhost:4200/` 
 7. Login using these credentials:  
-# user name: admin
-# password: 123@
+#### user name: admin
+#### password: 123@
 8. Please kindly explore the app. Thanks!
