@@ -77,46 +77,46 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
     this.router.navigate(['employeeDetail/'+employee.id]);
   }
 
-  addEmployee() {
-    const data = {
-      id: this.employee.id,
-      userName: this.employee.userName,
-      // firstName: this.employee.firstName,
-      // lastName: this.employee.lastName,
-      // email: this.employee.email,
-    };
-    this.employeeService.createEmployee(data).subscribe(response => {
-      console.log(response)
-      this.getEmployees();
-    });
-  }
+  // addEmployee() {
+  //   const data = {
+  //     id: this.employee.id,
+  //     userName: this.employee.userName,
+  //     // firstName: this.employee.firstName,
+  //     // lastName: this.employee.lastName,
+  //     // email: this.employee.email,
+  //   };
+  //   this.employeeService.createEmployee(data).subscribe(response => {
+  //     console.log(response)
+  //     this.getEmployees();
+  //   });
+  // }
 
-  setEmployeeEdit(employee: Employee) {
-    this.employee.id = employee.id;
-    this.employee.userName = employee.userName;
-    this.edit = false;
-    this.add = true;
-  }
+  // setEmployeeEdit(employee: Employee) {
+  //   this.employee.id = employee.id;
+  //   this.employee.userName = employee.userName;
+  //   this.edit = false;
+  //   this.add = true;
+  // }
 
-  resetValues() {    
-    this.employee.id = null;
-    this.employee.userName = "";
-    this.edit = true;
-    this.add = false;
-  }
+  // resetValues() {    
+  //   this.employee.id = null;
+  //   this.employee.userName = "";
+  //   this.edit = true;
+  //   this.add = false;
+  // }
 
-  removeEmployee(employee: Employee) {
-    const id = employee.id;
-    console.log(employee)
-    this.employeeService.deleteEmployee(id).subscribe(employee => console.log(employee));
-    this.getEmployees()
-  }
+  // removeEmployee(employee: Employee) {
+  //   const id = employee.id;
+  //   console.log(employee)
+  //   this.employeeService.deleteEmployee(id).subscribe(employee => console.log(employee));
+  //   this.getEmployees()
+  // }
 
-  updateEmployee() {
-    this.employeeService.editEmployee(this.employee).subscribe(response => console.log(response));
-    this.getEmployees()
-    this.resetValues()
-  }
+  // updateEmployee() {
+  //   this.employeeService.editEmployee(this.employee).subscribe(response => console.log(response));
+  //   this.getEmployees()
+  //   this.resetValues()
+  // }
 
   
 }
