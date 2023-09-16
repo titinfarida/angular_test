@@ -1,0 +1,13 @@
+div{
+    width: 100%;
+}
+mat-card-content{
+    width: 100%;
+}
+div span:first-child {
+    display: inline-block;
+    width: 200px;
+}
+mat-divider{
+    margin-bottom: 8px;
+}

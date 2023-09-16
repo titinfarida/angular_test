@@ -1,0 +1,6 @@
+.theForm .formField{
+    margin-right: 10px;
+}
+.formField.textArea{
+    width: 100%;
+}
