@@ -1,4 +1,4 @@
-<mat-card >
+<mat-card>
     <mat-card-header><mat-card-title>Employee Detail</mat-card-title></mat-card-header>
     <mat-card-content *ngIf="data">
         <div>
@@ -47,9 +47,11 @@
         </div>
         <mat-divider></mat-divider>
 
-        <div>
-
-            <a mat-raised-button style="margin: 5px" color="accent" (click)="goPreviousPage()">OK</a>
+        <div *ngIf="gridIsHidden">
+            <a mat-raised-button style="margin: 5px" color="accent" (click)="okClicked()">OK</a>
+        </div>
+        <div *ngIf="!gridIsHidden">
+            <a mat-raised-button style="margin: 5px" color="accent" (click)="redirectClicked()">OK</a>
         </div>
 
 

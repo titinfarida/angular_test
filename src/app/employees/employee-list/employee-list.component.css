@@ -1,25 +1,36 @@
-  .topPanel{    
+  .topPanel {
     padding-bottom: 10px;
-    text-align: right;    
-  }
-  .topPanel button{
-    margin-left: 100px;    
+    text-align: right;
   }
 
-  .action button{
+  .topPanel button {
+    margin-left: 100px;
+  }
+
+  .action button {
     margin-left: 10px;
   }
 
-  .make-yellow{
+  .make-yellow {
     background-color: yellow;
   }
 
-  .make-red{
+  .make-red {
     background-color: red;
   }
-  .detail-link a{
+
+  .detail-link a {
     font-style: italic;
     text-decoration: underline;
     cursor: pointer;
     color: blue;
+  }
+
+  div span:first-child {
+    display: inline-block;
+    width: 200px;
+  }
+
+  mat-divider {
+    margin-bottom: 8px;
   }

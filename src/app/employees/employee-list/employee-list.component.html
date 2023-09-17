@@ -1,11 +1,8 @@
-<div>
+<div  [hidden]="currentState != 'grid' ">
   <h2>Employee List</h2>
   <div class="topPanel">
-    <input type="text" (keyup)="applyFilter($event)" matInput placeholder="Search">
-    
-    <button mat-raised-button color="accent" (click)="goAddEmployee()">Add Employee</button>
-    
-    
+    <input type="text" (keyup)="applyFilter($event)" matInput placeholder="Search" [value]="dataSource.filter">    
+    <button mat-raised-button color="accent" (click)="goAddEmployee()">Add Employee</button>    
   </div>
   <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
     class="mat-elevation-z8">
@@ -46,3 +43,10 @@
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page">
   </mat-paginator>
 </div>
+
+<app-employee-detail *ngIf="currentState == 'detail' && rowData" [dataInit]="rowData" (back)="dismissChildPage();">
+
+</app-employee-detail>
+<app-add-employee *ngIf="currentState == 'add' " (back)="dismissChildPage();" (done)="dismissChildPage();" (save)="createNewData($event)">
+
+</app-add-employee>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EmployeeService } from '../employee.service';
@@ -10,26 +10,44 @@ import { EmployeeService } from '../employee.service';
 })
 export class AddEmployeeComponent implements OnInit {
 
+  @Output('back')
+  public cancel: EventEmitter<any> = new EventEmitter<any>();
+  @Output('done')
+  public done: EventEmitter<any> = new EventEmitter<any>();
+  @Output('save')
+  public save: EventEmitter<any> = new EventEmitter<any>();
+
+
+  gridIsHidden: boolean = false;
+
   constructor(private router: Router, private employeeService: EmployeeService) { }
   ngOnInit(): void {
-
+    const currentRoute = this.router.url;
+    if (currentRoute == '/employees') {
+      this.gridIsHidden = true
+    }
   }
-  respdata: any;
-  redirectEmployeeList() {
+  cancelClicked() {
+    this.cancel.emit();
+  }
+  redirectClicked() {
     this.router.navigate(['employees']);
   }
-  goPreviousPage() {
-    this.redirectEmployeeList();
-  }
+
   saveEmployee() {
     if (this.reactiveform.valid) {
-      console.log(this.reactiveform.value);
+      //console.log(this.reactiveform.value);
       let data: any = this.reactiveform.value
       data.id = null;
-      this.employeeService.createEmployee(data).subscribe(response => {
-        console.log(response)
-        this.redirectEmployeeList();
-      });
+
+      if (this.gridIsHidden) {
+        this.save.emit(data);
+      }
+      else {
+        this.employeeService.createEmployee(data).subscribe(response => {
+          this.redirectClicked()
+        });
+      }
     }
 
   }
@@ -39,7 +57,7 @@ export class AddEmployeeComponent implements OnInit {
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
-    birthDate: new FormControl('', [Validators.required, DateValidators.smallerThanToday() ]),
+    birthDate: new FormControl('', [Validators.required, DateValidators.smallerThanToday()]),
     basicSalary: new FormControl('', Validators.required),
     status: new FormControl('', Validators.required),
     group: new FormControl('', Validators.required),
@@ -86,9 +104,9 @@ export class DateValidators {
       if (theDate > todaysDate) {
         return { smallerThan: true };
       }
-      else{
+      else {
         return null;
       }
     };
-  }  
+  }
 }

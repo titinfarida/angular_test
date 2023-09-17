@@ -11,8 +11,8 @@ const routes: Routes = [
   {path: "", loadComponent:()=>import('./login/login.component').then(opt=> opt.LoginComponent)}, 
   {path:"home", component: HomeComponent, canActivate:[authGuard]}, 
   {path: "employees", component: EmployeeListComponent, canActivate:[authGuard]},
-  {path: "addEmployee", component: AddEmployeeComponent, canActivate:[authGuard]},
-  {path: "employeeDetail/:id", component: EmployeeDetailComponent, canActivate:[authGuard]},
+  {path: "employees/add", component: AddEmployeeComponent, canActivate:[authGuard]},
+  {path: "employees/:id", component: EmployeeDetailComponent, canActivate:[authGuard]},
 
   {path: "login", loadComponent:()=>import('./login/login.component').then(opt=> opt.LoginComponent)}, 
   {path: "**", component: StatusComponent}, 

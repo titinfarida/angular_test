@@ -62,7 +62,8 @@
             </div>
             <div>
                 <button mat-raised-button type="submit" color="primary">Save</button>
-                <a mat-raised-button style="margin: 5px" color="accent" (click)="goPreviousPage()">Cancel</a>
+                <a *ngIf="gridIsHidden" mat-raised-button style="margin: 5px" color="accent" (click)="cancelClicked()">Cancel</a>
+                <a *ngIf="!gridIsHidden" mat-raised-button style="margin: 5px" color="accent" (click)="redirectClicked()">Cancel</a>
             </div>
         </form>
 
