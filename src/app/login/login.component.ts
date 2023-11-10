@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         this.route.navigate(['employees'])
       }
       else{
-        alert("Login failed. User name and password do not match admin's credentials.")
+        alert("Login failed. User name and password do not match admin's credentials. >>")
       }
     }
     console.log(loginData.valid);
